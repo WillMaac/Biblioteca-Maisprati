@@ -28,11 +28,11 @@ public abstract class ItemBiblioteca {
         return disponivel;
     }
 
-    public void marcarComoEmprestado() {
+     void marcarComoEmprestado() {
         disponivel = false;
     }
 
-    public void marcarComoDevolvido() {
+     void marcarComoDevolvido() {
         disponivel = true;
     }
 
