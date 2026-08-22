@@ -10,4 +10,9 @@ public class Aluno extends Usuario {
     public int getLimiteItens() {
         return 3;
     }
+
+    @Override
+    public String getTipo() {
+        return "Aluno";
+    }
 }

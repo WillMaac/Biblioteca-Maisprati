@@ -26,7 +26,8 @@ public class Biblioteca {
         itens[quantidadeItens] = item;
         quantidadeItens++;
 
-        System.out.println("Item cadastrado: " + item.getTitulo());
+        String sufixo = item.EhFeminino() ? "a" : "o";
+        System.out.println(item.getTipo() + " cadastrad" + sufixo + ": " + item.getTitulo());
     }
 
     public void cadastrarUsuario(Usuario usuario) {
@@ -39,7 +40,7 @@ public class Biblioteca {
         usuarios[quantidadeUsuarios] = usuario;
         quantidadeUsuarios++;
 
-        System.out.println("Usuário cadastrado: " + usuario.getNome());
+        System.out.println(usuario.getTipo() + " cadastrado: " + usuario.getNome());
     }
 
     public void emprestar(String codigoItem, String nomeUsuario) {
@@ -58,7 +59,7 @@ public class Biblioteca {
         }
 
         if (!item.estaDisponivel()) {
-            System.out.println("Empréstimo recusado: item indisponível.");
+            System.out.println(item.getTipo() + " indisponível. Empréstimo recusado.");
             return;
         }
 
@@ -76,27 +77,11 @@ public class Biblioteca {
         item.marcarComoEmprestado();
         usuario.adicionarEmprestimo();
 
-        System.out.println(
-                "Empréstimo realizado com sucesso!"
-        );
-
-        System.out.println(
-                "Item: " + item.getTitulo()
-        );
-
-        System.out.println(
-                "Usuário: " + usuario.getNome()
-        );
-
-        System.out.println(
-                "Prazo: " + item.getPrazo() + " dias"
-        );
-
-        System.out.println(
-                "Multa: R$ " +
-                        String.format("%.2f", item.getMulta()) +
-                        "/dia"
-        );
+        System.out.println("Empréstimo realizado com sucesso!");
+        System.out.println(item.getTipo() + ": " + item.getTitulo());
+        System.out.println("Usuário: " + usuario.getNome());
+        System.out.println("Prazo: " + item.getPrazo() + " dias");
+        System.out.println("Multa: R$ " + String.format("%.2f", item.getMulta()) + "/dia");
     }
 
     public void devolver(String codigoItem, String nomeUsuario) {
@@ -115,24 +100,22 @@ public class Biblioteca {
         }
 
         if (item.estaDisponivel()) {
-            System.out.println("Esse item já está disponível.");
+            String artigo = item.EhFeminino() ? "Essa" : "Esse";
+            System.out.println(artigo + " " + item.getTipo().toLowerCase() + " já está disponível.");
             return;
         }
 
         item.marcarComoDevolvido();
         usuario.removerEmprestimo();
 
-        System.out.println(
-                "Devolução realizada com sucesso!"
-        );
+        System.out.println("Devolução realizada com sucesso!");
     }
 
     public void listarAcervo() {
 
-        System.out.println("\n===== ACERVO DA BIBLIOTECA =====");
+        System.out.println("\n===== COLEÇÃO DA BIBLIOTECA =====");
 
         for (ItemBiblioteca item : itens) {
-
             if (item != null) {
                 System.out.println(item);
             }
@@ -140,30 +123,20 @@ public class Biblioteca {
     }
 
     private ItemBiblioteca buscarItem(String codigo) {
-
         for (ItemBiblioteca item : itens) {
-
-            if (item != null &&
-                    item.getCodigo().equals(codigo)) {
-
+            if (item != null && item.getCodigo().equals(codigo)) {
                 return item;
             }
         }
-
         return null;
     }
 
     private Usuario buscarUsuario(String nome) {
-
         for (Usuario usuario : usuarios) {
-
-            if (usuario != null &&
-                    usuario.getNome().equalsIgnoreCase(nome)) {
-
+            if (usuario != null && usuario.getNome().equalsIgnoreCase(nome)) {
                 return usuario;
             }
         }
-
         return null;
     }
 }

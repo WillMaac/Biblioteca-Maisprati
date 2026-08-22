@@ -14,4 +14,14 @@ public class Revista extends ItemBiblioteca {
     public double getMulta() {
         return 1.00;
     }
+
+    @Override
+    public String getTipo() {
+        return "Revista";
+    }
+
+    @Override
+    public boolean ehFeminino() {
+        return true;
+    }
 }

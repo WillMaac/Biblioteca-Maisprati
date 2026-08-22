@@ -14,4 +14,14 @@ public class Livro extends ItemBiblioteca {
     public double getMulta() {
         return 0.50;
     }
+
+    @Override
+    public String getTipo() {
+        return "Livro";
+    }
+
+    @Override
+    public boolean ehFeminino() {
+        return false;
+    }
 }
