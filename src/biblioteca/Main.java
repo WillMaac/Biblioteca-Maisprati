@@ -105,6 +105,9 @@ public class Main {
                 "LI1",
                 "Anderson"
         );
+        DVD dvd1 = new DVD("DV1", "Silicon Valley");
+        biblioteca.cadastrarItem(dvd1);
+        biblioteca.emprestar("DV1", "Anderson");
 
         biblioteca.listarAcervo();
     }

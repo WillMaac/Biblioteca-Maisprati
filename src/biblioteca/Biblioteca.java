@@ -26,7 +26,7 @@ public class Biblioteca {
         itens[quantidadeItens] = item;
         quantidadeItens++;
 
-        String sufixo = item.EhFeminino() ? "a" : "o";
+        String sufixo = item.ehFeminino() ? "a" : "o";
         System.out.println(item.getTipo() + " cadastrad" + sufixo + ": " + item.getTitulo());
     }
 
@@ -100,7 +100,7 @@ public class Biblioteca {
         }
 
         if (item.estaDisponivel()) {
-            String artigo = item.EhFeminino() ? "Essa" : "Esse";
+            String artigo = item.ehFeminino() ? "Essa" : "Esse";
             System.out.println(artigo + " " + item.getTipo().toLowerCase() + " já está disponível.");
             return;
         }
