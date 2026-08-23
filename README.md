@@ -11,17 +11,17 @@ O mesmo domínio é resolvido de duas formas independentes: um sistema em Java u
 ```
 Biblioteca/
 ├── src/biblioteca/
-│   ├── ItemBiblioteca.java   # classe abstrata
+│   ├── ItemBiblioteca.java   
 │   ├── Livro.java
 │   ├── Revista.java
-│   ├── DVD.java               # categoria extra, prova de extensibilidade
-│   ├── Usuario.java           # classe abstrata
+│   ├── DVD.java               
+│   ├── Usuario.java           
 │   ├── Aluno.java
 │   ├── Professor.java
 │   ├── Biblioteca.java
-│   └── Main.java              # cenário de teste
+│   └── Main.java             
 └── database/
-    └── biblioteca.sql         # criação das tabelas + dados de teste + consultas
+    └── biblioteca.sql        
 ```
 
 ---
