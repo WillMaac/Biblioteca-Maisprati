@@ -11,6 +11,8 @@ public abstract class Usuario {
 
     public abstract int getLimiteItens();
 
+    public abstract String getTipo();
+
     public String getNome() {
         return nome;
     }

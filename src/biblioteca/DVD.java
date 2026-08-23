@@ -1,23 +1,24 @@
 package biblioteca;
 
-public class Livro extends ItemBiblioteca {
-    public Livro(String codigo, String titulo) {
+public class DVD extends ItemBiblioteca {
+
+    public DVD(String codigo, String titulo) {
         super(codigo, titulo);
     }
 
     @Override
     public int getPrazo() {
-        return 14;
+        return 3;
     }
 
     @Override
     public double getMulta() {
-        return 0.50;
+        return 2.00;
     }
 
     @Override
     public String getTipo() {
-        return "Livro";
+        return "DVD";
     }
 
     @Override

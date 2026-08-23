@@ -16,6 +16,9 @@ public abstract class ItemBiblioteca {
 
     public abstract double getMulta();
 
+    public abstract String getTipo();
+    public abstract boolean ehFeminino();
+
     public String getCodigo() {
         return codigo;
     }
@@ -28,11 +31,11 @@ public abstract class ItemBiblioteca {
         return disponivel;
     }
 
-     void marcarComoEmprestado() {
+    void marcarComoEmprestado() {
         disponivel = false;
     }
 
-     void marcarComoDevolvido() {
+    void marcarComoDevolvido() {
         disponivel = true;
     }
 
